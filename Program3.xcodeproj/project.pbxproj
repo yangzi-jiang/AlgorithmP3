@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A343E4A11FA01F0700AE81BB /* change.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A343E4A01FA01F0700AE81BB /* change.cpp */; };
+		A343E4A41FA01F1E00AE81BB /* coins.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A343E4A21FA01F1E00AE81BB /* coins.cpp */; };
 		A38D82041F9C03CF001CD20E /* pmatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A38D82031F9C03CF001CD20E /* pmatrix.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A343E4A01FA01F0700AE81BB /* change.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = change.cpp; sourceTree = "<group>"; };
+		A343E4A21FA01F1E00AE81BB /* coins.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coins.cpp; sourceTree = "<group>"; };
+		A343E4A31FA01F1E00AE81BB /* coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coins.h; sourceTree = "<group>"; };
 		A38D82001F9C03CF001CD20E /* Program3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Program3; sourceTree = BUILT_PRODUCTS_DIR; };
 		A38D82031F9C03CF001CD20E /* pmatrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pmatrix.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				A38D82031F9C03CF001CD20E /* pmatrix.cpp */,
+				A343E4A01FA01F0700AE81BB /* change.cpp */,
+				A343E4A21FA01F1E00AE81BB /* coins.cpp */,
+				A343E4A31FA01F1E00AE81BB /* coins.h */,
 			);
 			path = Program3;
 			sourceTree = "<group>";
@@ -119,7 +127,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A343E4A41FA01F1E00AE81BB /* coins.cpp in Sources */,
 				A38D82041F9C03CF001CD20E /* pmatrix.cpp in Sources */,
+				A343E4A11FA01F0700AE81BB /* change.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +258,7 @@
 				A38D82091F9C03CF001CD20E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
