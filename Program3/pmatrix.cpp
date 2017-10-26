@@ -4,7 +4,7 @@
 //  Solution to matrix multiplication order.
 //
 
-//  Yangzi Jiangon, Collin Epstein
+//  Yangzi Jiang, Collin Epstein
 //  10/26/17
 //  CSC321
 //  Dr. Mossinghoff
@@ -15,21 +15,19 @@
 
 #include <iostream>
 #include <limits>
-#include <string>
 
 using namespace std;
 
-int numM; // number of arrays to multiply
-
 // helping functions
-string buildGrouping(int* a, string& s, const int index1, const int index2);
+void buildGrouping(int* a, const int index1, const int index2, const int n);
 
-int matrix() { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+int mat() { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     
     // get program parameters from user
     // get # of matrices
     //int numM;
     cout << "Number of Matrices? ";
+    int numM; // number of arrays to multiply
     cin >> numM;
     
     // validate input
@@ -113,9 +111,9 @@ int matrix() { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     cout << endl;
     
     // print optimal grouping
-    string group = "";
-    group = buildGrouping(s, group, 0, numM - 1);
-    cout << "Optimal grouping:" << endl << group << endl << endl;
+    cout << "Optimal grouping:" << endl;
+    buildGrouping(s, 0, numM - 1, numM);
+    cout << endl << endl;
     
     // print total cost
     cout << "Total Cost: " << m[numM - 1] << " multiplications." << endl
@@ -134,23 +132,26 @@ int matrix() { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 // recursive function to build string representation of optimal grouping
 // assume index2 > index1
-// RETURN TO PARENTHESES INSERTING
-string buildGrouping(int* a, string& s, const int index1, const int index2){
-    
-    // base case - single matrix
-    if(index2 - index1 == 0) return "A" + to_string(index2 + 1);
+void buildGrouping(int* a, const int index1, const int index2, const int n){
     
     // base case - only two matrices
-    if(index2 - index1 < 2){
-        return "A" + to_string(index1 + 1) + "A" + to_string(index2 + 1);
+    if(index2 - index1 == 1){
+        cout << "(A" << index1 + 1 << "A" << index2 + 1 << ")";
+        return;
     }
     
+    // base case - single matrix
+    if(index2 - index1 == 0){
+        cout << "A" << index2 + 1;
+        return;
+    }
+
     // find optimal multiplication location for subproblem
-    int k = a[index1 * numM + index2];
+    int k = a[index1 * n + index2];
     
-    //s.append("(" + buildGrouping(a, s, index1, k - 1) + ")");
-    //s.append("(" + buildGrouping(a, s, k, index2) + ")");
-    
-    return "(" + buildGrouping(a, s, index1, k - 1) + ")(" +
-        buildGrouping(a, s, k, index2) + ")"; // PARENTHESES!!!!!
+    // recurisve calls. don't add parentheses around single matrix
+    if(index2 - index1 != n - 1) cout << "(";
+    buildGrouping(a, index1, k - 1, n);
+    buildGrouping(a, k, index2, n);
+    if(index2 - index1 != n - 1) cout << ")";
 }
