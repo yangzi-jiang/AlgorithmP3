@@ -142,8 +142,6 @@ void Coins::optimal(int trial){
     int tempVal;
     
     for(int i = 2; i <= trial; i++){
-//        cout << coinsUsed << endl;
-//        cout << countOptimal << endl;
         tempVal = i;
         
         // Check if a coin equals to the current test value
@@ -153,7 +151,6 @@ void Coins::optimal(int trial){
             countOptimal = 1;
             cout << values[coinsTaken] << endl;
             cout << storedValues[i - 1] << endl;
-//            cout << countOptimal << endl;
             coinsTaken++;
         }
         else{
@@ -168,7 +165,7 @@ void Coins::optimal(int trial){
             storedValues[i - 1] = coinsUsed;
         }
     }
-//    storedValues[trial - 1] = coinsUsed;
+    storedValues[trial - 1] = coinsUsed;
 }
 
 void Coins::printOptimal(){
