@@ -10,7 +10,7 @@
 //  Dr. Mossinghoff
 //
 //  Number of times that inner loop runs as function of number of matrices:
-//  COME BACK TO ANSWERING THIS QUESTION
+//  Slightly adjusted tetrahedral numbers: f(n) = ((n-1)(n)(n+1))/6
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
@@ -20,7 +20,7 @@ using namespace std;
 // helping functions
 void buildGrouping(int* a, const int index1, const int index2, const int n);
 
-int mat() { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+int main() { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     
     // get program parameters from user
     // get # of matrices
