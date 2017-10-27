@@ -14,7 +14,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
-#include <limits>
 
 using namespace std;
 
@@ -77,7 +76,7 @@ int mat() { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     for(int l = 1; l < numM; l++){
         for(int i = 0; i < numM - l; i++){
             j = i + l;
-            m[i * numM + j] = numeric_limits<int>::max(); // approx. infinity
+            m[i * numM + j] = INT_MAX; // approx. infinity
             for(int k = i; k < j; k++){
                 q = m[i * numM + k] + m[(k + 1) * numM + j] + dim[i]
                     * dim[k + 1] * dim[j + 1];

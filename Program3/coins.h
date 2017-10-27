@@ -14,23 +14,22 @@
 
 #include <iostream>
 #include <stdio.h>
+#include <algorithm>
 
 using namespace std;
-
 
 class Coins{
     
   public:
     Coins();
     ~Coins();
-    void resize(int);
-    void topDown(int);
     void initializeTrial();
     void greedy(int);
     void printGreedy();
-    void optimal(int);
+    void optimal(const int);
     void printOptimal();
     void compare();
+    
   private:
     int numCoins;
     int* values;
@@ -39,7 +38,8 @@ class Coins{
     int countOptimal;
     int tableSize;
     int* coinCounts;
-    void topDownHelper(int, const int, const int);
+    string* optimalCoins;
+    void resize(const int);
 };
 
 #endif /* coins_h */
