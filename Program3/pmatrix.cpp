@@ -20,7 +20,7 @@ using namespace std;
 // helping functions
 void buildGrouping(int* a, const int index1, const int index2, const int n);
 
-int main() { // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+int main() {
     
     // get program parameters from user
     // get # of matrices

@@ -15,7 +15,7 @@
 
 using namespace std;
 
-int mait(){
+int main(){
     
     // intitialize program
     Coins coinTest;
